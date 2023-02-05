@@ -14,10 +14,16 @@ function App() {
   }
    
   const deleteTask =(taskName)=>{
-    todoList.filter((id)=>{
-        
-    });
-  }
+    const newTodoList = todoList.filter((task)=>{
+      if(task === taskName){
+        return false;
+      }else{
+        return true;
+      } 
+    })
+        setTodoList(newTodoList)
+    }
+  
   return (
  
     <div className="App">
