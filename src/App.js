@@ -10,17 +10,16 @@ function App() {
   }
 
   const addTask =(newTask)=>{
+    const task={
+      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+      taskName:newTask
+    }
     setTodoList([...todoList,newTask]);
   }
    
   const deleteTask =(taskName)=>{
-    const newTodoList = todoList.filter((task)=>{
-      if(task === taskName){
-        return false;
-      }else{
-        return true;
-      } 
-    })
+    const newTodoList = todoList.filter((task)=> task !== taskName 
+    )
         setTodoList(newTodoList)
     }
   
