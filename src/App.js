@@ -9,16 +9,16 @@ function App() {
     setNewTask(event.target.value);
   }
 
-  const addTask =(newTask)=>{
+  const addTask =()=>{
     const task={
       id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
       taskName:newTask
-    }
+    };
     setTodoList([...todoList,newTask]);
-  }
+  };
    
-  const deleteTask =(taskName)=>{
-    const newTodoList = todoList.filter((task)=> task !== taskName 
+  const deleteTask =(id)=>{
+    const newTodoList = todoList.filter((task)=> task.id !== id 
     )
         setTodoList(newTodoList)
     }
@@ -28,13 +28,13 @@ function App() {
     <div className="App">
       <div className='addTask'>
         <input type="text" onChange={handleChange}/>
-        < button onClick={()=>addTask(newTask)}>Add Task</button>
+        < button onClick={addTask}>Add Task</button>
       </div>
       <div className='list'>
         <h1>{todoList.map((task)=>{
           return(
           <div className='listItem'>
-            <h3>{task}</h3>
+            <h3>{task.taskName}</h3>
              <button onClick={()=>deleteTask(task)}>x</button>
           </div>
           )
