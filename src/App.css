@@ -37,15 +37,18 @@
   }
 }
 
- 
+
 
 .addTask{
-  padding-top:10px;
+  background: #61dafb;
+  padding: 20px;
+  font-size: 30px;
 }
 
 .listItem{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   
 }
